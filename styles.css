@@ -1,0 +1,358 @@
+body {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    position: relative;
+    color: #fff;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the video covers the entire viewport */
+    z-index: -1; /* Sends the video behind other content */
+}
+
+.glass-wrapper {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    color: white;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 0;
+}
+
+.hero video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 1;
+    margin: 20px 0;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.content {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: #fff;
+    text-align: center;
+    padding: 40px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 40px;
+}
+
+.content h3 {
+    color: #6f42c1;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.row-description {
+    margin-top: 40px;
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.navbar a {
+    color: white !important;
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    padding-bottom: 5px;
+    transition: color 0.3s ease;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+.navbar a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+footer {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+h1,
+h3 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+}
+
+.description {
+    padding: 20px;
+    text-align: center;
+}
+
+.custom-btn {
+    transition: background-color 0.3s ease;
+}
+
+.custom-btn:hover {
+    background-color: transparent;
+    color: white;
+}
+
+.form-label {
+    color: #ffd700;
+    /* Label color */
+}
+
+.btn-primary {
+    background-color: #ffd700;
+    /* Primary button color */
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #e6c700;
+    /* Hover color for button */
+}
+
+section {
+    width: 80%;
+    /* Keep the width as is */
+    margin: 20px auto;
+    /* Add margin for spacing, adjust as needed */
+    padding: 20px;
+    /* Optional: add padding for inner spacing */
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: scale(1.05);
+    /* Slight zoom effect */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow on hover */
+}
+
+.glass-wrapper {
+    background: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white */
+    backdrop-filter: blur(10px);
+    /* Frosted glass effect */
+    border-radius: 15px;
+    /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    padding: 20px;
+    /* Internal padding for content */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Animation */
+}
+
+.glass-wrapper:hover {
+    transform: translateY(-5px);
+    /* Slight hover lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Stronger shadow on hover */
+}
+
+.w-90 {
+    width: 90%;
+    /* Custom width for cards */
+}
+
+.custom-accordion-button {
+    background-color: #f8f9fa;
+    color: #333;
+    font-weight: bold;
+    border: 2px solid #ddd;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    align-items: center;
+}
+
+.custom-accordion-button i {
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.custom-accordion-button:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.custom-accordion-button:hover i {
+    transform: rotate(180deg);
+}
+
+.accordion-body {
+    background-color: #f1f1f1;
+    font-style: italic;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.directory-item {
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.directory-item:hover {
+    transform: translateY(-10px);
+}
+
+.directory-item img {
+    height: 250px;
+    object-fit: cover;
+}
+
+.card-body {
+    background-color: #f9f9f9;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.card-body {
+    background: transparent;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.d-grid {
+    margin-top: 1.5rem;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Transparent border */
+}
+
+.modal-content {
+    color: #000; /* Black text */
+}
